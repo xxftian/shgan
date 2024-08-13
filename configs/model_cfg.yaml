@@ -1,0 +1,78 @@
+batch_size: 64
+num_heads: 8
+hidden_dim: 128
+embed_dim: 32
+n_classes: 2
+lr: 0.003
+wd: !!float 1e-4
+n_layers: 3
+device: "cuda:0"
+data_path: "./data/"
+early_stopping: 10
+max_epochs: 20
+dataset: "yelp"
+test_size: 0.2
+post_proc: True
+alpha: 0.1
+beta: 0.1
+sh_p: 2
+sh_scaling: 0.75
+sh_blur: 0.05
+use_cat:
+    yelp: False
+    amazon: False
+    tfsd: True
+use_efeats:
+    yelp: False
+    amazon: False
+    tfsd: True
+mdatas: {
+  "0": {
+    "relation": "voice",
+    "name": "vpn_flag",
+    "dtype": "categorical",
+    "max_size": 4
+  },
+  "1": {
+    "relation": "voice",
+    "name": "call_duration",
+    "dtype": "numerical",
+    "max_size": -1
+  },
+  "2": {
+    "relation": "voice",
+    "name": "bef_base_fee",
+    "dtype": "numerical",
+    "max_size": -1
+  },
+  "3": {
+    "relation": "payment",
+    "name": "pay_fee",
+    "dtype": "numerical",
+    "max_size": -1
+  },
+  "4": {
+    "relation": "payment",
+    "name": "pay_type",
+    "dtype": "categorical",
+    "max_size": 16
+  },
+  "5": {
+    "relation": "rel_nn",
+    "name": "service_type",
+    "dtype": "categorical",
+    "max_size": 4
+  },
+  "6": {
+    "relation": "rel_nn",
+    "name": "product_type",
+    "dtype": "categorical",
+    "max_size": 240
+  },
+  "7": {
+    "relation": "rel_nn",
+    "name": "relation_type_cbss",
+    "dtype": "categorical",
+    "max_size": 9
+  }
+}
